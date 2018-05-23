@@ -1,6 +1,6 @@
 {
   "name": "usay-auth-middleware",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Authentication middleware for nodejs frontends",
   "main": "src/index.js",
   "scripts": {
