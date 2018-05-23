@@ -1,22 +1,19 @@
 const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
 
-module.exports = usayAuth;
 module.exports = setToken;
 module.exports = usaySession;
 
-function usayAuth() {
+module.exports.usayAuth = function(req, res, next) {
 
-  return function usayAuth(req, res, next) {
+  if (req.session.authenticated)
+    return next();
 
-    if (req.session.authenticated)
-      return next();
-
-    res.redirect(process.env.APP_AUTH_MANAGER_NODE_URL + '/login?redirect='+process.env.APP_URL);
-  }
+  res.redirect(process.env.APP_AUTH_MANAGER_NODE_URL + '/login?redirect='+process.env.APP_URL);
 }
 
-function setToken() {
+
+module.exports.setToken = function() {
   return function setToken(req, res) {
 
     // If we have a session ID in our query params, use that as our new session ID and redirect to homepage
@@ -33,7 +30,7 @@ function setToken() {
   }
 }
 
-function usaySession() {
+module.exports.usaySession = function() {
   return session({
     store: new RedisStore({host: 'redis', port: 6379}),
     secret: 'keyboard cat',
