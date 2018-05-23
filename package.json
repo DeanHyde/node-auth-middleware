@@ -2,7 +2,7 @@
   "name": "usay-auth-middleware",
   "version": "1.0.1",
   "description": "Authentication middleware for nodejs frontends",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
