@@ -1,0 +1,11 @@
+{
+  "name": "auth-middleware",
+  "version": "1.0.0",
+  "description": "Authentication middleware for nodejs frontends",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dean Hyde",
+  "license": "ISC"
+}
